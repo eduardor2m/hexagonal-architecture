@@ -1,7 +1,7 @@
-CRUD em Golang usando a arquitetura hexagonal
-Este repositório contém uma implementação de um CRUD básico usando a linguagem Golang e a arquitetura hexagonal.
+# CRUD em Golang usando a arquitetura hexagonal
+### Este repositório contém uma implementação de um CRUD básico usando a linguagem Golang e a arquitetura hexagonal.
 
-Arquitetura hexagonal
+## Arquitetura hexagonal
 A arquitetura hexagonal, também conhecida como ports and adapters, é um estilo arquitetural que tem como objetivo tornar o código mais flexível e independente de infraestrutura. Essa arquitetura é baseada em três conceitos principais:
 
 O núcleo da aplicação: é onde se encontram as regras de negócio e a lógica da aplicação.
@@ -14,11 +14,11 @@ Para executar o projeto, é necessário ter o Golang instalado na sua máquina. 
 
 Para clonar o repositório e executar o projeto, execute os seguintes comandos:
 
-shell
+```shell
 Copy code
 $ git clone https://github.com/seu-usuario/crud-golang-hexagonal.git
 $ cd crud-golang-hexagonal
-$ go run ./src/cmd/server/main.go
+$ go run ./src/cmd/server/main.go```
 Endpoints
 O projeto contém os seguintes endpoints:
 
