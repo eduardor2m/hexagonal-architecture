@@ -7,13 +7,11 @@ import (
 )
 
 type UserHandler struct {
-	UserUseCase usecases.UserUseCase
+	userUseCase *usecases.UserUseCase
 }
 
-func NewUserHandler(userUseCase usecases.UserUseCase) *UserHandler {
-	return &UserHandler{
-		UserUseCase: userUseCase,
-	}
+func NewUserHandler(userUseCase *usecases.UserUseCase) *UserHandler {
+	return &UserHandler{userUseCase}
 }
 
 func (h *UserHandler) CreateUser(c echo.Context) error {
@@ -23,7 +21,7 @@ func (h *UserHandler) CreateUser(c echo.Context) error {
 		return c.JSON(400, err)
 	}
 
-	if err := h.UserUseCase.CreateUser(user.Email, user.Name); err != nil {
+	if err := h.userUseCase.CreateUser(user.Email, user.Name); err != nil {
 		return c.JSON(400, err)
 	}
 
@@ -33,7 +31,7 @@ func (h *UserHandler) CreateUser(c echo.Context) error {
 func (h *UserHandler) GetUser(c echo.Context) error {
 	email := c.Param("email")
 
-	user, err := h.UserUseCase.GetUserByEmail(email)
+	user, err := h.userUseCase.GetUserByEmail(email)
 
 	if err != nil {
 		return c.JSON(404, err)

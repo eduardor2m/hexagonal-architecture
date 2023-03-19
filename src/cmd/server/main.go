@@ -15,9 +15,7 @@ func main() {
 
 	userRepo := repositories.NewUserRepository(db)
 	userUseCase := usecases.NewUserUseCase(userRepo)
-	userHandler := &http.UserHandler{
-		UserUseCase: *userUseCase,
-	}
+	userHandler := http.NewUserHandler(userUseCase)
 
 	u := e.Group("/users")
 
