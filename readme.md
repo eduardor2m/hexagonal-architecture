@@ -14,11 +14,11 @@ Para executar o projeto, é necessário ter o Golang instalado na sua máquina. 
 
 Para clonar o repositório e executar o projeto, execute os seguintes comandos:
 
-```shell
-Copy code
+```bash
 $ git clone https://github.com/seu-usuario/crud-golang-hexagonal.git
 $ cd crud-golang-hexagonal
-$ go run ./src/cmd/server/main.go ```
+$ go run ./src/cmd/server/main.go 
+```
 Endpoints
 O projeto contém os seguintes endpoints:
 
