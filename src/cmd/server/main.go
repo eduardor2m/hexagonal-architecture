@@ -1,10 +1,10 @@
 package main
 
 import (
+	http "github.com/eduardor2m/hexagonal-architecture/src/internal/adapters/inbound/http"
 	"github.com/eduardor2m/hexagonal-architecture/src/internal/domain/repositories"
 	"github.com/eduardor2m/hexagonal-architecture/src/internal/domain/usecases"
 	"github.com/eduardor2m/hexagonal-architecture/src/internal/infrastructure/database"
-	"github.com/eduardor2m/hexagonal-architecture/src/internal/infrastructure/routes"
 	"github.com/labstack/echo/v4"
 )
 
@@ -15,8 +15,14 @@ func main() {
 
 	userRepo := repositories.NewUserRepository(db)
 	userUseCase := usecases.NewUserUseCase(userRepo)
+	userHandler := &http.UserHandler{
+		UserUseCase: *userUseCase,
+	}
 
-	routes.NewUserRoutes(e, userUseCase)
+	u := e.Group("/users")
+
+	u.POST("", userHandler.CreateUser)
+	u.GET("/:email", userHandler.GetUser)
 
 	e.Logger.Fatal(e.Start(":8080"))
 }

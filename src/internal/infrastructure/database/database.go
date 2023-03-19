@@ -21,8 +21,8 @@ func Connect() (db *sql.DB) {
 	sqlStmt := `
 	CREATE TABLE IF NOT EXISTS users (
 		id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-		name TEXT,
-		email TEXT
+		name VARCHAR(255),
+		email VARCHAR(255)
 	);`
 
 	db.Exec(sqlStmt)
