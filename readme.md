@@ -15,19 +15,21 @@ Para executar o projeto, é necessário ter o Golang instalado na sua máquina. 
 Para clonar o repositório e executar o projeto, execute os seguintes comandos:
 
 ```bash
-$ git clone https://github.com/seu-usuario/crud-golang-hexagonal.git
-$ cd crud-golang-hexagonal
+$ git clone https://github.com/eduardor2m/hexagonal-architecture.git
+$ cd hexagonal-architecture
 $ go run ./src/cmd/server/main.go 
 ```
 Endpoints
 O projeto contém os seguintes endpoints:
 
-GET /users: Retorna todos os usuários cadastrados
-GET /users/:id: Retorna um usuário pelo ID
-POST /users: Cria um novo usuário
-PUT /users/:id: Atualiza um usuário existente
-DELETE /users/:id: Remove um usuário pelo ID
-Contribuindo
+- GET /users: Retorna todos os usuários cadastrados
+- GET /users/:id: Retorna um usuário pelo ID
+- POST /users: Cria um novo usuário
+- PUT /users/:id: Atualiza um usuário existente
+- DELETE /users/:id: Remove um usuário pelo ID
+ 
+## Contribuindo
+
 Sinta-se à vontade para contribuir com o projeto. Basta fazer um fork do repositório, criar uma nova branch com a sua contribuição e abrir um pull request.
 
 Licença
