@@ -21,7 +21,7 @@ func (h *UserHandler) CreateUser(c echo.Context) error {
 		return c.JSON(400, err)
 	}
 
-	if err := h.userUseCase.CreateUser(user.Email, user.Name); err != nil {
+	if err := h.userUseCase.CreateUser(user.Email, user.Name, "123456"); err != nil {
 		return c.JSON(400, err)
 	}
 

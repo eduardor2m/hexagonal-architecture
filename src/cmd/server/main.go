@@ -1,7 +1,7 @@
 package main
 
 import (
-	http "github.com/eduardor2m/hexagonal-architecture/src/internal/adapters/inbound/http"
+	http "github.com/eduardor2m/hexagonal-architecture/src/internal/adapters/http"
 	"github.com/eduardor2m/hexagonal-architecture/src/internal/domain/repositories"
 	"github.com/eduardor2m/hexagonal-architecture/src/internal/domain/usecases"
 	"github.com/eduardor2m/hexagonal-architecture/src/internal/infrastructure/database"

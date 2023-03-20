@@ -3,7 +3,7 @@ package usecases
 import "github.com/eduardor2m/hexagonal-architecture/src/internal/domain/models"
 
 type UserRepository interface {
-	Save(user *models.User) error
+	Save(user *models.User, password string) error
 	GetByEmail(email string) (*models.User, error)
 }
 
@@ -15,10 +15,10 @@ func NewUserUseCase(userRepo UserRepository) *UserUseCase {
 	return &UserUseCase{userRepo}
 }
 
-func (u *UserUseCase) CreateUser(name, email string) error {
-	user := &models.User{Name: name, Email: email}
+func (u *UserUseCase) CreateUser(name, email, password string) error {
+	user := models.NewUser(name, email, password)
 
-	err := u.userRepo.Save(user)
+	err := u.userRepo.Save(user, password)
 
 	if err != nil {
 		return err

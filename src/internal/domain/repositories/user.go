@@ -14,8 +14,8 @@ func NewUserRepository(db *sql.DB) *UserRepository {
 	return &UserRepository{db}
 }
 
-func (u *UserRepository) Save(user *models.User) error {
-	_, err := u.db.Exec("INSERT INTO users (name, email) VALUES (?, ?)", user.Name, user.Email)
+func (u *UserRepository) Save(user *models.User, password string) error {
+	_, err := u.db.Exec("INSERT INTO users (name, email, password) VALUES (?, ?, ?)", user.Name, user.Email, password)
 
 	if err != nil {
 		return err
